@@ -8,7 +8,7 @@ data "aws_ami" "ubuntu" {
     name = "virtualization-type"
     values = ["hvm"]
   }
-  owners = ["444774854770"] # Canonical
+  
 }              
  
 resource "aws_instance" "webserver" {
