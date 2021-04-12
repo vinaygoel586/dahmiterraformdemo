@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('Git Checkout'){
+            steps{
+            git 'https://github.com/vinaygoel586/dahmiterraformdemo.git'
+            }
+        }
+        stage('Terraform init'){
+            steps{
+                sh 'terraform init'
+            }
+            
+        }
+        stage('Terraform apply'){
+            steps{
+                sh 'terraform apply --auto-approve'
+            }
+            
+        }
+    }
+}
